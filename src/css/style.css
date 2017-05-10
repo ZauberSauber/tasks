@@ -1,0 +1,40 @@
+.content {
+	display: flex;
+}
+.flying-area {
+	position: relative;
+	width: 600px;
+	height: 600px;
+	background: grey;
+}
+.balls-area {
+	width: 400px;
+	height: 400px;
+	margin-left: 15px;
+	background: #D3F16D;
+	box-sizing: border-box;
+	border: 2px dashed #000;
+}
+.avatar {
+	position: absolute;
+	z-index: 2;
+}
+.ball {
+	width: 100px;
+	height: 100px;
+	background: #FF8A00;
+	border-radius: 50%;
+	box-shadow: 7px -7px 7px 0px rgba(0,0,0,.7) inset;
+	cursor: pointer;
+	opacity: 1;
+}
+.ball__flying {
+	position: absolute;
+	cursor: default;
+	transition: width 500ms, height 500ms, opacity 500ms;
+}
+.ball__explode {
+	width: 250px;
+	height: 250px;
+	opacity: 0;
+}
