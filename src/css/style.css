@@ -28,6 +28,9 @@
 	cursor: pointer;
 	opacity: 1;
 }
+.ball__dragged {
+	display: none;
+}
 .ball__flying {
 	position: absolute;
 	cursor: default;

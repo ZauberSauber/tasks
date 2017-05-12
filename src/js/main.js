@@ -171,6 +171,7 @@
     if ( !dragObj.avatar ) {
     	createAvatar(e);
     }
+    dragObj.elem.classList.add('ball__dragged');
     // автар создан, приклеиваем к курсору
     dragObj.avatar.style.left = e.pageX - dragObj.shiftX + window.pageXOffset + 'px';
 	  dragObj.avatar.style.top = e.pageY - dragObj.shiftY + window.pageYOffset + 'px';
@@ -179,6 +180,7 @@
 
 	const onMouseUp = (e)=> {
 		if ( dragObj.avatar ) {
+			dragObj.elem.classList.remove('ball__dragged');
 			dragObj.avatar.style.display = 'none';
 			let dropElem = document.elementFromPoint(e.clientX, e.clientY);
 			dragObj.avatar.style.display = 'block';
@@ -220,7 +222,7 @@
 		let draggItems = [],
 				tmparr = draggArea.getElementsByClassName('ball')
 		for (let i = 0; i < tmparr.length; i++) {
-			draggItems.push(tmparr[i].outerHTML;
+			draggItems.push(tmparr[i].outerHTML);
 		}
 		storage.draggArea = draggItems;
 		window.localStorage.setItem('doubleBalls', JSON.stringify(storage));
@@ -322,7 +324,7 @@
 			let draggItems = draggArea.getElementsByClassName('ball');
 			storage.draggArea = [];
 			for (let i = 0; i < draggItems.length; i++) {
-				storage.draggArea.push(draggItems[i].outerHTML;
+				storage.draggArea.push(draggItems[i].outerHTML);
 			}
 			console.log(storage.draggArea)
 
